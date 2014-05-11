@@ -1,7 +1,5 @@
 body {
+  background-color: lightblue;
   padding-top: 50px;
-}
-.admin {
-  padding: 40px 15px;
   text-align: center;
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aling Nena's Online Sari-Sari Store</title>
+		<link href="bootstrap.min.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Aling Nena's</a><!-- this is where you set the navigation title -->
+        </div>
+        <div class="collapse navbar-collapse"><!-- collapse allows for this navbar to be used in mobile devices -->
+          <ul class="nav navbar-nav"><!-- this is the list of navigation options in your navbar -->
+			<li><a href="/">Home</a></li>
+            <li><a href="/about.erb">About Us</a></li>
+            <li class="active"><a href="products.erb">Products</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<br  /><br  /><br  />
+	<img src="sample2.jpg" />
+	<div class="container">
+		<div class="productsavail">
+			<h1 align="center">Our Products</h1>
+			<br  />
+			<table class="table table striped">
+				<thead> 
+					<tr>
+						<td>Name</td>
+						<td>Price</td>
+						<td>Quantity</td>
+					</tr>
+				</thead>
+				<tbody>
+				<% @products.each do |product| %>
+					<tr>
+						<td><a href="/buyform.erb/<%= product.id %>"><font color="#000000"><%= product.name %></font></a></td>
+						<td><%= product.price %></td>
+						<td><%= product.quantity %></td>
+					</tr>
+				<% end %> 
+				</tbody>
+			</table>
+		</div>
+	</div>			
+	</body>
+</html>
